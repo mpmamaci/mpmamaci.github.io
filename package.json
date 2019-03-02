@@ -16,6 +16,10 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "pre-push": [
+    "predeploy",
+    "deploy"
+  ],
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -26,6 +30,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "pre-push": "^0.1.1"
   }
 }
