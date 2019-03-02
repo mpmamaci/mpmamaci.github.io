@@ -1,4 +1,4 @@
-# mpmamaci.github.io
+# my-react-gh-page
 
 > Repository for React App hosted on mpmamaci.github.io website
 
