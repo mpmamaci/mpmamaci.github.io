@@ -1,6 +1,6 @@
 # my-react-gh-page
 
-> Repository for React App hosted on mpmamaci.github.io website
+> Repository for React App hosted on [this](https://mpmamaci.github.io/my-react-gh-page) website
 
 ## Getting Started
 
