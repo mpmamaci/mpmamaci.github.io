@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/my-react-gh-page/static/js/runtime~main.ec0bc448.js"
   },
   {
-    "revision": "6c25a990110490272f14",
-    "url": "/my-react-gh-page/static/js/main.6c25a990.chunk.js"
+    "revision": "ba73cae3c147a2300dee",
+    "url": "/my-react-gh-page/static/js/main.ba73cae3.chunk.js"
   },
   {
     "revision": "5bf9b2cda7c63b962686",
     "url": "/my-react-gh-page/static/js/2.5bf9b2cd.chunk.js"
   },
   {
-    "revision": "6c25a990110490272f14",
+    "revision": "ba73cae3c147a2300dee",
     "url": "/my-react-gh-page/static/css/main.4510ae9e.chunk.css"
   },
   {
-    "revision": "b195c74d53c9db709d866c86f61af4c4",
+    "revision": "b1223ae3c41f7b25cd56724f8c85734a",
     "url": "/my-react-gh-page/index.html"
   }
 ];
