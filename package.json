@@ -17,7 +17,6 @@
     "deploy": "gh-pages -d build"
   },
   "pre-push": [
-    "test",
     "deploy"
   ],
   "eslintConfig": {
