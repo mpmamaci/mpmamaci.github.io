@@ -1,0 +1,22 @@
+.Chiffre-header {
+  background-color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.innerColumnsStyle {
+  margin: 0.75rem;
+}
+
+.stylesButton {
+  margin: 0.2rem;
+  padding: 0%;
+}
+
+.upperTextbox {
+  margin-bottom: 2rem;
+}

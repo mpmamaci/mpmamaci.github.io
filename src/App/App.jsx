@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import promodoro from '../resources/tomato.svg';
+import Chiffre from '../Sites/MC2/MC2';
 import './App.css';
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
 }
 
 function chiffre() {
-  return <div />;
+  return <Chiffre />;
 }
 
 function AppRouter() {
