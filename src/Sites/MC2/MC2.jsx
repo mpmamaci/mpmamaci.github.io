@@ -29,8 +29,18 @@ function Chiffre() {
           </div>
           <div className="column is-half">
             <p className="has-text-white-ter has-text-left subtitle is-5">Result:</p>
-            <textarea className="textarea" type="text" id="output" />
+            <textarea className="textarea" type="text" id="output" value="" />
           </div>
+        </div>
+        <div className="section">
+          <a
+            className="has-text-info has-text-left subtitle is-3"
+            href="https://drive.google.com/file/d/12FUF_74zSd7J3KBtSvkC8TGALyL-KMHV/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <u>Python Version for File Encryption</u>
+          </a>
         </div>
       </div>
     </div>

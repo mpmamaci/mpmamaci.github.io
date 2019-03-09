@@ -1,9 +1,9 @@
-/* eslint-disable */
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import promodoro from '../resources/tomato.svg';
 import Chiffre from '../Sites/MC2/MC2';
 import './App.css';
+import 'bulma/css/bulma.css';
 
 function App() {
   return (
@@ -15,15 +15,20 @@ function App() {
           className="App-logo"
           alt="logo"
         />
-        <h6>designed by Freepik from Flaticon</h6>
-        <a
-          className="App-link"
-          href="http://tomato-timer.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p>Pomodoro Timer</p>
-        </a>
+        <p className="section subtitle is-small">designed by Freepik from Flaticon</p>
+        <div className="columns">
+          <a
+            className="App-link column"
+            href="http://tomato-timer.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pomodoro Timer
+          </a>
+          <a className="App-link column is-half" href="/mc2">
+            Advanced Vigenere
+          </a>
+        </div>
       </header>
     </div>
   );
