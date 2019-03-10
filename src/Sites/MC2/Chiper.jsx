@@ -1,0 +1,89 @@
+import React, { Component } from 'react';
+import 'bulma/css/bulma.css';
+import './MC2.css';
+import { encode, decode } from './cipherFunctions';
+import { PythonLink, Header } from './components/StateLessComponents';
+
+class Cipher extends Component {
+  state = {
+    inputField: '',
+    outputField: '',
+    passwordField: ''
+  };
+
+  handleInputChange = event => {
+    this.setState({ inputField: event.target.value });
+  };
+
+  handlePasswordChange = event => {
+    this.setState({ passwordField: event.target.value });
+  };
+
+  handleEncryButton = () => {
+    this.setState({
+      outputField: encode(this.state.inputField, this.state.passwordField)
+    });
+  };
+
+  handleDecryButton = () => {
+    this.setState({
+      outputField: decode(this.state.inputField, this.state.passwordField)
+    });
+  };
+
+  Column() {
+    return (
+      <div className="columns">
+        <div className="column is-half">
+          <p className="has-text-white-ter has-text-left subtitle is-5">Enter your text here:</p>
+          <textarea
+            value={this.state.inputField}
+            onChange={this.handleInputChange}
+            className="form-control textarea upperTextbox"
+          />
+          <p className="has-text-white-ter has-text-left subtitle is-5">Password:</p>
+          <input
+            value={this.state.passwordField}
+            onChange={this.handlePasswordChange}
+            className="input is-primary"
+            type="text"
+          />
+          <div className="columns innerColumnsStyle is-mobile">
+            <button
+              onClick={this.handleEncryButton}
+              className="column button is-white is-fullwidth stylesButton"
+              type="button"
+            >
+              encryption
+            </button>
+            <button
+              onClick={this.handleDecryButton}
+              className="column button is-white is-fullwidth stylesButton"
+              type="button"
+            >
+              decryption
+            </button>
+          </div>
+        </div>
+        <div className="column is-half">
+          <p className="has-text-white-ter has-text-left subtitle is-5">Result:</p>
+          <textarea value={this.state.outputField} className="textarea" type="text" readOnly />
+        </div>
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div className="cipher-header section has-background-black has-text-centered">
+        <Header />
+        <div className="container section is-medium">
+          <div>{this.Column()}</div>
+          <PythonLink />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Cipher;
