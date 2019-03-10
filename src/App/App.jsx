@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import promodoro from '../resources/tomato.svg';
 import Cipher from '../Sites/MC2/Chiper';
 import './App.css';
@@ -26,7 +27,7 @@ class App extends Component {
             >
               Pomodoro Timer
             </a>
-            <a className="App-link column is-half" href="/mc2">
+            <a className="App-link column is-half" href="#/mc2">
               Advanced Vigenere
             </a>
           </div>
@@ -42,12 +43,12 @@ function cipher() {
 
 function AppRouter() {
   return (
-    <Router>
+    <HashRouter>
       <div>
         <Route path="/" exact component={App} />
-        <Route path="/mc2/" component={cipher} />
+        <Route path="/mc2" component={cipher} />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
