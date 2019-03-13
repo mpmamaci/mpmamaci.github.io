@@ -1,55 +1,48 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom';
-import promodoro from '../resources/tomato.svg';
+import Pomodoro from '../Sites/Pomodoro/Pomodoro';
 import Cipher from '../Sites/MC2/Chiper';
+import AppRouter from './AppRouter';
 import './App.css';
 import 'bulma/css/bulma.css';
 
+const BottomLinks = () => (
+  <div className="columns">
+    <a className="App-link column" href="#/">
+      Home
+    </a>
+    <a
+      className="App-link column"
+      href="http://tomato-timer.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Pomodoro Timer
+    </a>
+    <a className="App-link column" href="#/mc2">
+      Advanced Vigenere
+    </a>
+  </div>
+);
+
 class App extends Component {
+  state = {
+    components: [
+      {
+        path: '/',
+        component: Pomodoro
+      },
+      {
+        path: '/mc2',
+        component: Cipher
+      }
+    ]
+  };
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img
-            titel="designed by Freepik from Flaticon"
-            src={promodoro}
-            className="App-logo"
-            alt="logo"
-          />
-          <p className="section subtitle is-small">designed by Freepik from Flaticon</p>
-          <div className="columns">
-            <a
-              className="App-link column"
-              href="http://tomato-timer.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Pomodoro Timer
-            </a>
-            <a className="App-link column is-half" href="#/mc2">
-              Advanced Vigenere
-            </a>
-          </div>
-        </header>
-      </div>
-    );
+    return <AppRouter routes={this.state.components} />;
   }
 }
 
-function cipher() {
-  return <Cipher />;
-}
+export default App;
 
-function AppRouter() {
-  return (
-    <HashRouter>
-      <div>
-        <Route path="/" exact component={App} />
-        <Route path="/mc2" component={cipher} />
-      </div>
-    </HashRouter>
-  );
-}
-
-export default AppRouter;
+export { BottomLinks };

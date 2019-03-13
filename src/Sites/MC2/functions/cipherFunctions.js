@@ -1,7 +1,3 @@
-String.prototype.replaceAt = function(index, replacement) {
-  return this.substr(0, index) + replacement + this.substr(index + replacement.length);
-};
-
 function decode(input, code) {
   let output = input;
 
@@ -29,7 +25,6 @@ function encode(input, code) {
 
   let x;
   let key;
-  let y;
 
   for (let i = 0; i < input.length; i += 1) {
     if (input.charCodeAt(i) <= 32 || input.charCodeAt(i) >= 226) {
@@ -43,5 +38,9 @@ function encode(input, code) {
 
   return output;
 }
+
+String.prototype.replaceAt = function(index, replacement) {
+  return this.substr(0, index) + replacement + this.substr(index + replacement.length);
+};
 
 export { encode, decode };
