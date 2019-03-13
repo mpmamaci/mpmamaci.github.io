@@ -1,0 +1,10 @@
+.btn {
+  border: white;
+  border-style: solid;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  background-color: brown;
+  color: white;
+}

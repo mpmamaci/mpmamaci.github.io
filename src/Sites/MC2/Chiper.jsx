@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { encode, decode } from './functions/cipherFunctions';
 import { PythonLink, Header } from './components/StatelessComponents';
-import { BottomLinks } from '../../App/App';
+import BottomLinks from '../../App/Links/Links';
 import 'bulma/css/bulma.css';
 import './MC2.css';
 

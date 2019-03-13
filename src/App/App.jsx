@@ -1,34 +1,19 @@
 import React, { Component } from 'react';
 import Pomodoro from '../Sites/Pomodoro/Pomodoro';
+import Home from '../Sites/Home/Home';
 import Cipher from '../Sites/MC2/Chiper';
 import AppRouter from './AppRouter';
 import './App.css';
-import 'bulma/css/bulma.css';
-
-const BottomLinks = () => (
-  <div className="columns">
-    <a className="App-link column" href="#/">
-      Home
-    </a>
-    <a
-      className="App-link column"
-      href="http://tomato-timer.com"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Pomodoro Timer
-    </a>
-    <a className="App-link column" href="#/mc2">
-      Advanced Vigenere
-    </a>
-  </div>
-);
 
 class App extends Component {
   state = {
     components: [
       {
         path: '/',
+        component: Home
+      },
+      {
+        path: '/pomodoro',
         component: Pomodoro
       },
       {
@@ -44,5 +29,3 @@ class App extends Component {
 }
 
 export default App;
-
-export { BottomLinks };

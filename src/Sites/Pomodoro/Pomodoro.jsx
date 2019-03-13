@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import promodoro from '../../resources/tomato.svg';
-import { BottomLinks } from '../../App/App';
+import promodoro from '../../resources/svg/tomato.svg';
+import BottomLinks from '../../App/Links/Links';
 import 'bulma/css/bulma.css';
 
 class Pomodoro extends Component {
