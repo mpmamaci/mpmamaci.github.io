@@ -3,7 +3,8 @@ import Pomodoro from '../Sites/Pomodoro/Pomodoro';
 import Home from '../Sites/Home/Home';
 import Cipher from '../Sites/MC2/Chiper';
 import AppRouter from './AppRouter';
-import './App.css';
+import '../Sites/Pomodoro/Pomodoro.css';
+import 'bulma/css/bulma.css';
 
 class App extends Component {
   state = {

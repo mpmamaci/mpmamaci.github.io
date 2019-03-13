@@ -8,7 +8,7 @@ class AppRouter extends Component {
       <HashRouter>
         <div>
           {this.props.routes.map(route => (
-            <Route path={route.path} exact component={route.component} />
+            <Route key={route.path} path={route.path} exact component={route.component} />
           ))}
         </div>
       </HashRouter>
