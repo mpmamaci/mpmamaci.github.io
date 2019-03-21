@@ -8,6 +8,12 @@ class StyledProgressbar extends Component {
     percentage: 0
   };
 
+  convertTime(time) {
+    let measuredTime = new Date(null);
+    measuredTime.setSeconds(time);
+    return measuredTime.toISOString().substr(11, 8);
+  }
+
   render() {
     const { percentage, strokeWidth } = this.props;
     return (
@@ -26,7 +32,7 @@ class StyledProgressbar extends Component {
           }}
           strokeWidth={strokeWidth}
           percentage={percentage}
-          text={new Date().toLocaleTimeString()}
+          text={this.convertTime(this.props.time)}
         />
       </div>
     );
