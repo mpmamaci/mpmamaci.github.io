@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Popup from 'reactjs-popup';
 import axios from 'axios';
 import promodoro from '../../resources/svg/tomato.svg';
 import BottomLinks from '../../App/Links/Links';
+import '../../App/Links/Links.scss';
 import StyledProgressbar from './StyledProgessbar';
 import 'bulma/css/bulma.css';
 import '../../utils/helpers.scss';
@@ -15,7 +17,9 @@ class Pomodoro extends Component {
     startFocusTime: 0,
     pauseTime: 0,
     startPauseTime: 0,
-    timer: ''
+    timer: '',
+    changedFocusTimer: 0,
+    changedPauseTimer: 0
   };
 
   tick = timer => {
@@ -42,7 +46,6 @@ class Pomodoro extends Component {
 
       if (this.state.pauseTime === -1) clearInterval(this.state.intervallId);
     } else {
-      console.log('juuup');
       const timeElement = <StyledProgressbar time={0} strokeWidth={5} percentage={0} />;
       ReactDOM.render(timeElement, document.getElementById('tick'));
     }
@@ -63,6 +66,8 @@ class Pomodoro extends Component {
         pauseTime: response.data.pauseTimer.pauseTime,
         startFocusTime: response.data.focusTimer.startTime,
         startSauseTime: response.data.pauseTimer.startTime,
+        changedFocusTimer: response.data.focusTimer.startTime,
+        changedPauseTimer: response.data.pauseTimer.startTime,
         timer: timer
       });
     });
@@ -83,6 +88,10 @@ class Pomodoro extends Component {
     clearInterval(this.state.intervallId);
   }
 
+  handleChange = event => {
+    if (event.target.value >= 0) this.setState({ [event.target.name]: event.target.value * 60 });
+  };
+
   render() {
     return (
       <div className="Pomodoro">
@@ -102,6 +111,37 @@ class Pomodoro extends Component {
               <p className="section subtitle has-text-white is-small">
                 designed by Freepik from Flaticon
               </p>
+              <div className="is-centered">
+                <Popup
+                  trigger={<button className="btn box">Options</button>}
+                  modal
+                  closeOnDocumentClick
+                >
+                  <div className="columns p-sm">
+                    <div className="column">
+                      <h1 className="subtitle is-4">Focus Time:</h1>
+                      <input
+                        name="changedFocusTimer"
+                        value={this.state.changedFocusTimer / 60}
+                        onChange={this.handleChange}
+                        className="input is-primary has-text-centered"
+                        type="number"
+                      />
+                    </div>
+                    <div className="column">
+                      <h1 className="subtitle is-4">Pause Time:</h1>
+                      <input
+                        name="changedPauseTimer"
+                        value={this.state.changedPauseTimer / 60}
+                        onChange={this.handleChange}
+                        className="input is-primary has-text-centered"
+                        type="number"
+                      />
+                    </div>
+                  </div>
+                  <button className="button is-primary is-fullwidth">Submit</button>
+                </Popup>
+              </div>
             </div>
           </div>
           <BottomLinks />

@@ -16,7 +16,7 @@ class Cipher extends Component {
     document.title = 'MC-2 Cipher';
   }
 
-  handleChange = (event, field) => {
+  handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 

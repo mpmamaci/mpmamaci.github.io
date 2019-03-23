@@ -21,3 +21,4 @@ const BottomLinks = () => (
 );
 
 export default BottomLinks;
+export { BottomLinksClasses };
