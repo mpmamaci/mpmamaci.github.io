@@ -154,6 +154,7 @@ class Pomodoro extends Component {
                   <div className="columns p-sm">
                     <div className="column">
                       <h1 className="subtitle is-4">Focus Time:</h1>
+                      <span>Time in minutes</span>
                       <input
                         name="changedFocusTimer"
                         value={this.state.changedFocusTimer / 60}
@@ -161,9 +162,17 @@ class Pomodoro extends Component {
                         className="input is-primary has-text-centered"
                         type="number"
                       />
+                      <button
+                        name="startFocusTimer"
+                        className="button p-none m-t-sm column is-primary is-fullwidth"
+                        onClick={this.handleSubmitButton}
+                      >
+                        Start Focus
+                      </button>
                     </div>
                     <div className="column">
                       <h1 className="subtitle is-4">Pause Time:</h1>
+                      <span>Time in minutes</span>
                       <input
                         name="changedPauseTimer"
                         value={this.state.changedPauseTimer / 60}
@@ -171,29 +180,22 @@ class Pomodoro extends Component {
                         className="input is-primary has-text-centered"
                         type="number"
                       />
+                      <button
+                        name="startPauseTimer"
+                        className="button p-none m-t-sm column is-primary is-fullwidth"
+                        onClick={this.handleSubmitButton}
+                      >
+                        Start Pause
+                      </button>
                     </div>
-                  </div>
-                  <div className="columns">
-                    <button
-                      name="startFocusTimer"
-                      className="button p-none column is-primary m-md"
-                      onClick={this.handleSubmitButton}
-                    >
-                      Start Focus
-                    </button>
-                    <button
-                      name="startPauseTimer"
-                      className="button p-none column is-primary m-md"
-                      onClick={this.handleSubmitButton}
-                    >
-                      Start Pause
-                    </button>
                   </div>
                 </Popup>
               </div>
             </div>
           </div>
-          <BottomLinks />
+          <div className="section">
+            <BottomLinks />
+          </div>
         </div>
       </div>
     );
