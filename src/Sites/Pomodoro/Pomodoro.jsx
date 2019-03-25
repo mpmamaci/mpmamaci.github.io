@@ -65,7 +65,7 @@ class Pomodoro extends Component {
         focusTime: response.data.focusTimer.focusTime,
         pauseTime: response.data.pauseTimer.pauseTime,
         startFocusTime: response.data.focusTimer.startTime,
-        startSauseTime: response.data.pauseTimer.startTime,
+        startPauseTime: response.data.pauseTimer.startTime,
         changedFocusTimer: response.data.focusTimer.startTime,
         changedPauseTimer: response.data.pauseTimer.startTime,
         timer: timer
@@ -90,6 +90,40 @@ class Pomodoro extends Component {
 
   handleChange = event => {
     if (event.target.value >= 0) this.setState({ [event.target.name]: event.target.value * 60 });
+  };
+
+  handleSubmitButton = async event => {
+    if (event.target.name === 'startFocusTimer') {
+      var path = '/api/timer/focus/start';
+      var time = this.state.changedFocusTimer;
+    } else if (event.target.name === 'startPauseTimer') {
+      path = '/api/timer/pause/start';
+      time = this.state.changedPauseTimer;
+    }
+    await axios.get(process.env.REACT_APP_BASE_URL + '/api/timer/stop');
+    await axios
+      .post(process.env.REACT_APP_BASE_URL + path, {
+        time: time / 60
+      })
+      .then(response => {
+        if (response.data.focusTimer.runs) {
+          var timer = 'f';
+        } else if (response.data.pauseTimer.runs) {
+          timer = 'p';
+        } else {
+          timer = 'none';
+        }
+        this.setState({
+          focusTime: response.data.focusTimer.focusTime,
+          pauseTime: response.data.pauseTimer.pauseTime,
+          startFocusTime: response.data.focusTimer.startTime,
+          startPauseTime: response.data.pauseTimer.startTime,
+          changedFocusTimer: response.data.focusTimer.startTime,
+          changedPauseTimer: response.data.pauseTimer.startTime,
+          timer: timer
+        });
+      });
+    window.location.reload();
   };
 
   render() {
@@ -139,7 +173,22 @@ class Pomodoro extends Component {
                       />
                     </div>
                   </div>
-                  <button className="button is-primary is-fullwidth">Submit</button>
+                  <div className="columns">
+                    <button
+                      name="startFocusTimer"
+                      className="button p-none column is-primary m-md"
+                      onClick={this.handleSubmitButton}
+                    >
+                      Start Focus
+                    </button>
+                    <button
+                      name="startPauseTimer"
+                      className="button p-none column is-primary m-md"
+                      onClick={this.handleSubmitButton}
+                    >
+                      Start Pause
+                    </button>
+                  </div>
                 </Popup>
               </div>
             </div>
