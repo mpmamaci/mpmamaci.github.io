@@ -128,7 +128,7 @@ class Pomodoro extends Component {
 
   render() {
     return (
-      <div className="Pomodoro">
+      <div className="Pomodoro section">
         <div className="container">
           <div className="container section">
             <h1 className="title is-1 has-text-white">Pomodoro Timer</h1>
