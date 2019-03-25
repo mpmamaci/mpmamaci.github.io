@@ -5,6 +5,7 @@ import Cipher from '../Sites/MC2/Chiper';
 import AppRouter from './AppRouter';
 import '../Sites/Pomodoro/Pomodoro.css';
 import 'bulma/css/bulma.css';
+import Licenses from './Licenses';
 
 class App extends Component {
   state = {
@@ -20,6 +21,10 @@ class App extends Component {
       {
         path: '/mc2',
         component: Cipher
+      },
+      {
+        path: '/licenses',
+        component: Licenses
       }
     ]
   };

@@ -4,7 +4,7 @@ import 'bulma/css/bulma.css';
 import './Home.css';
 import '../../utils/spacing.scss';
 
-const homePicture = require('../../resources/img/home-view.png');
+const homePicture = require('../../resources/img/home-view.jpeg');
 
 class Home extends Component {
   componentDidMount() {

@@ -22,6 +22,15 @@ class Pomodoro extends Component {
     changedPauseTimer: 0
   };
 
+  playSound() {
+    let url = 'http://soundbible.com/mp3/analog-watch-alarm_daniel-simion.mp3';
+    let audio = new Audio(url);
+    audio.play();
+    setTimeout(() => {
+      audio.pause();
+    }, 4500);
+  }
+
   tick = timer => {
     if (timer === 'f') {
       const percentage = 100 - (100 * this.state.focusTime) / this.state.startFocusTime;
@@ -33,7 +42,10 @@ class Pomodoro extends Component {
         focusTime: this.state.focusTime - 1
       });
 
-      if (this.state.focusTime === -1) clearInterval(this.state.intervallId);
+      if (this.state.focusTime === -1) {
+        clearInterval(this.state.intervallId);
+        this.playSound();
+      }
     } else if (timer === 'p') {
       const percentage = 100 - (100 * this.state.pauseTime) / this.state.startPauseTime;
       const timeElement = (
@@ -44,7 +56,10 @@ class Pomodoro extends Component {
         pauseTime: this.state.pauseTime - 1
       });
 
-      if (this.state.pauseTime === -1) clearInterval(this.state.intervallId);
+      if (this.state.pauseTime === -1) {
+        clearInterval(this.state.intervallId);
+        this.playSound();
+      }
     } else {
       const timeElement = <StyledProgressbar time={0} strokeWidth={5} percentage={0} />;
       ReactDOM.render(timeElement, document.getElementById('tick'));
@@ -128,7 +143,7 @@ class Pomodoro extends Component {
 
   render() {
     return (
-      <div className="Pomodoro">
+      <div className="Pomodoro section">
         <div className="container">
           <div className="container section">
             <h1 className="title is-1 has-text-white">Pomodoro Timer</h1>
@@ -142,9 +157,9 @@ class Pomodoro extends Component {
                 className="Pomodoro-logo"
                 alt="logo"
               />
-              <p className="section subtitle has-text-white is-small">
-                designed by Freepik from Flaticon
-              </p>
+              <div className="section subtitle is-small is-link">
+                <a href="#/licenses">For Information about Pictures and Music click here</a>
+              </div>
               <div className="is-centered">
                 <Popup
                   trigger={<button className="btn box">Options</button>}
