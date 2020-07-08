@@ -7,7 +7,7 @@ function decode(input, code) {
 
   for (let i = 0; i < input.length; i += 1) {
     if (input.charCodeAt(i) <= 32 || input.charCodeAt(i) >= 226) {
-      i += 1;
+      continue;
     }
     x = input.charCodeAt(i) - 33;
     key = code.charCodeAt(i % code.length) - 33;
@@ -28,7 +28,7 @@ function encode(input, code) {
 
   for (let i = 0; i < input.length; i += 1) {
     if (input.charCodeAt(i) <= 32 || input.charCodeAt(i) >= 226) {
-      i += 1;
+      continue;
     }
     x = input.charCodeAt(i) - 33;
     key = code.charCodeAt(i % code.length) - 33;
