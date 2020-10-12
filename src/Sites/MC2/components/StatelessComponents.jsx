@@ -17,11 +17,11 @@ function PythonLink() {
     <div className="section">
       <a
         className="has-text-info has-text-left subtitle is-3"
-        href="https://drive.google.com/file/d/12FUF_74zSd7J3KBtSvkC8TGALyL-KMHV/view?usp=sharing"
+        href="https://drive.google.com/drive/folders/1gRc_HsOY-4yj1LDYr6MbfpzBiter7czy?usp=sharing"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <u>Python Version for File Encryption</u>
+        <u>Desktop Version for File Encryption</u>
       </a>
     </div>
   );
