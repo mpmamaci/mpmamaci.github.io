@@ -79,7 +79,7 @@ class Cipher extends Component {
         <div className="container section is-medium">
           <div>{this.TextFields()}</div>
           <PythonLink />
-          <BottomLinks />
+          {/*<BottomLinks />*/}
         </div>
       </div>
     );

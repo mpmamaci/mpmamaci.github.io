@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Pomodoro from '../Sites/Pomodoro/Pomodoro';
 import Home from '../Sites/Home/Home';
 import Cipher from '../Sites/MC2/Chiper';
 import Clock from '../Sites/Clock/Clock';
@@ -13,12 +12,12 @@ class App extends Component {
     components: [
       {
         path: '/',
-        component: Home
+        component: Cipher//Home
       },
-      {
-        path: '/pomodoro',
-        component: Pomodoro
-      },
+      // {
+      //   path: '/pomodoro',
+      //   component: Pomodoro
+      // },
       {
         path: '/mc2',
         component: Cipher
@@ -27,10 +26,10 @@ class App extends Component {
         path: '/licenses',
         component: Licenses
       },
-      {
-        path: '/clock',
-        component: Clock
-      }
+      // {
+      //   path: '/clock',
+      //   component: Clock
+      // }
     ]
   };
 

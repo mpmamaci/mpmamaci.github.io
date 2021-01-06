@@ -11,9 +11,9 @@ const BottomLinks = () => (
     <a className={BottomLinksClasses} href="#/">
       Home
     </a>
-    <a className={BottomLinksClasses} href="#/pomodoro">
-      Pomodoro Timer
-    </a>
+    {/* <a className={BottomLinksClasses} href="#/pomodoro">
+            Pomodoro Timer
+      </a>*/}
     <a className={BottomLinksClasses} href="#/mc2">
       Advanced Vigenere
     </a>
