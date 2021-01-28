@@ -19,7 +19,6 @@ function generatePasswd(length, specialCharacters) {
     .split('')
     .sort(() => 0.5 - Math.random())
     .join('');
-  console.log(characters);
   let result = '';
   for (var i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
