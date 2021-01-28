@@ -32,7 +32,7 @@
 //   };
 
 //   callApi = async () => {
-//     fetch('https://www.uhrzeit.org/time/sync.php', {
+//     fetch('TIME_API?', {
 //       method: 'GET'
 //     })
 //       .then(response => {
