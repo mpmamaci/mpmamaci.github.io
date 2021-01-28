@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { encode, decode } from './functions/cipherFunctions';
 import { PythonLink, Header } from './components/StatelessComponents';
-import BottomLinks from '../../App/Links/Links';
 import 'bulma/css/bulma.css';
 import './MC2.css';
+import '../../App/Links/Links.scss';
 
 class Cipher extends Component {
   state = {
@@ -73,13 +73,16 @@ class Cipher extends Component {
   );
 
   render() {
+    const BottomLinksClasses = 'btn column card is-centered m-md';
     return (
       <div className="cipher-header section has-background-black has-text-centered">
         <Header />
         <div className="container section is-medium">
           <div>{this.TextFields()}</div>
           <PythonLink />
-          {/*<BottomLinks />*/}
+          <a className={BottomLinksClasses} href="#/passwd">
+            Passwort Generator
+          </a>
         </div>
       </div>
     );

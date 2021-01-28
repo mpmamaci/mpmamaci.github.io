@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import Home from '../Sites/Home/Home';
 import Cipher from '../Sites/MC2/Chiper';
-import Clock from '../Sites/Clock/Clock';
 import AppRouter from './AppRouter';
 import '../Sites/Pomodoro/Pomodoro.css';
 import 'bulma/css/bulma.css';
 import Licenses from './Licenses';
+import PasswordGenerator from '../Sites/PasswordGenerator/PasswordGenerator';
 
 class App extends Component {
   state = {
     components: [
       {
         path: '/',
-        component: Cipher//Home
+        component: Cipher //Home
       },
       // {
       //   path: '/pomodoro',
@@ -26,6 +25,10 @@ class App extends Component {
         path: '/licenses',
         component: Licenses
       },
+      {
+        path: '/passwd',
+        component: PasswordGenerator
+      }
       // {
       //   path: '/clock',
       //   component: Clock
